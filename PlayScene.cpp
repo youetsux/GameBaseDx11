@@ -1,5 +1,6 @@
 #include "PlayScene.h"
 #include "Player.h"
+#include "Enemy.h"
 #include "Engine/Camera.h"
 
 PlayScene::PlayScene(GameObject* parent)
@@ -10,8 +11,11 @@ PlayScene::PlayScene(GameObject* parent)
 void PlayScene::Initialize()
 {
 	Instantiate<Player>(this);
-	Camera::SetPosition({ 0, 10, -10 });
-	Camera::SetTarget({ 0,0,-5 });
+	for (int i = 0; i < 50; i++) {
+		Instantiate<Enemy>(this);
+	}
+	Camera::SetPosition({ 0, 8, -10 });
+	Camera::SetTarget({ 0,3, 0 });
 }
 
 void PlayScene::Update()

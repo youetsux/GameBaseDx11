@@ -16,9 +16,9 @@ Player::~Player()
 void Player::Initialize()
 {
 	//モデルデータのロード
-	hModel_ = Model::Load("Model\\player.fbx");
+	hModel_ = Model::Load("Model\\playerobj.fbx");
 	assert(hModel_ >= 0);
-	transform_.position_ = { 0,0,-5 };
+	transform_.position_ = { 0,0,0 };
 }
 
 void Player::Update()
