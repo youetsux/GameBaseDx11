@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Bullet.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 
@@ -33,7 +34,8 @@ void Player::Update()
 	}
 	if (Input::IsKeyDown(DIK_SPACE))
 	{
-		Instantiate<Bullet>(this);
+		Bullet *p = Instantiate<Bullet>(this->GetParent());
+		p->SetPosition(this->transform_.position_);//プレイヤーの位置
 	}
 }
 
